@@ -25,9 +25,9 @@ import * as Cookies from "../processing/cookie/manager.js";
 import * as YouTubeSession from "../processing/helpers/youtube-session.js";
 
 const git = {
-    branch: await getBranch(),
-    commit: await getCommit(),
-    remote: await getRemote(),
+    branch: await getBranch().catch(() => null),
+    commit: await getCommit().catch(() => null),
+    remote: await getRemote().catch(() => null),
 }
 
 const version = await getVersion();
