@@ -349,9 +349,10 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
         );
     });
 
+    const port = process.env.PORT || env.apiPort || 8080;
     http.createServer(app).listen({
-        port: env.apiPort,
-        host: env.listenAddress,
+        port,
+        host: "0.0.0.0",
         reusePort: env.instanceCount > 1 || undefined
     }, () => {
         if (isPrimary) {
