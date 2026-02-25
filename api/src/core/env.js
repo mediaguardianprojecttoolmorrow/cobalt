@@ -61,8 +61,8 @@ export const loadEnvs = (env = process.env) => {
 
     return {
         apiURL: env.API_URL || '',
-        apiPort: env.API_PORT || 9000,
-        tunnelPort: env.API_PORT || 9000,
+        apiPort: env.API_PORT || 8080,
+        tunnelPort: env.API_PORT || 8080,
 
         listenAddress: env.API_LISTEN_ADDRESS,
         freebindCIDR: process.platform === 'linux' && env.FREEBIND_CIDR,
