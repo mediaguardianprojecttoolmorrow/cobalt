@@ -349,7 +349,7 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
         );
     });
 
-    const port = process.env.PORT || env.apiPort || 8080;
+    const port = Number(process.env.PORT) || 8080;
     http.createServer(app).listen({
         port,
         host: "0.0.0.0",
